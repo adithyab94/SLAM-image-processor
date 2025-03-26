@@ -108,7 +108,7 @@ Example: Slightly tuned version of snapping for room1
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details (or include the license text directly if no separate file exists).
+This project is licensed under the MIT License - see the LICENSE file for details
 
 
 ## References :
