@@ -1,0 +1,35 @@
+# Configuration for Floor Plan Processing Script
+
+image_processing:
+  image_path: "data/room1.pgm"    # Input image file path (room2.pgm or room3.pgm)
+  output_dir: "output" # Directory for saving intermediate and final images
+
+binarization:
+  threshold_value: 150          # Pixel value threshold for separating walls from background
+  invert: True                # Use THRESH_BINARY_INV (True if walls are darker than background)
+
+cleaning:
+  min_contour_area: 50         # Minimum area (pixels) for a contour to be kept (removes noise)
+  close_kernel_size: 3          # Size of the kernel for morphological closing (fills small gaps)
+  close_iterations: 1           # Number of iterations for closing operation
+
+line_detection:
+  hough_rho: 1                  # Distance resolution of the accumulator in pixels (HoughLinesP)
+  hough_theta_degrees: 1.0      # Angle resolution of the accumulator in degrees (converted to radians in script)
+  hough_threshold: 25           # Accumulator threshold parameter. Only lines with enough votes are returned.
+  hough_min_line_length: 20     # Minimum line length. Line segments shorter than this are discarded.
+  hough_max_line_gap: 20        # Maximum allowed gap between points on the same line to link them.
+
+line_categorization:
+  angle_tolerance_degrees: 7.0  # Tolerance (degrees) to classify a line as horizontal or vertical
+
+slanted_line_filtering:
+  slanted_min_length: 25        # Minimum length for a slanted line to be kept
+
+orthogonal_line_processing:
+  merge_gap_pixels: 25          # Maximum gap between collinear H/V lines to merge them
+  merge_axis_tolerance: 4       # Maximum difference in the fixed coordinate (y for H, x for V) for merging
+  corner_connection_threshold: 20 # Maximum distance between H and V endpoints to connect them into a corner
+
+output:
+  line_thickness: 2             # Thickness of lines in the final output image
