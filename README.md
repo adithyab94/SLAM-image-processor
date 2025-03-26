@@ -109,3 +109,8 @@ Example: Slightly tuned version of snapping for room1
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details (or include the license text directly if no separate file exists).
+
+
+## References :
+- https://stackoverflow.com/questions/20429052/opencv-convert-floorplan-image-into-data-model
+- https://stackoverflow.com/questions/41002267/opencv-snap-corner-to-grid/70890822#70890822
